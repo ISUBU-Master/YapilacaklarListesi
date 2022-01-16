@@ -9,6 +9,7 @@ export default function Header() {
         marginLeft: 20,
         flexDirection: 'row',
         alignItems: 'flex-end',
+        marginBottom: 15,
       }}>
       <Text style={{flex: 1, color: '#fff', fontSize: 28, fontWeight: 'bold'}}>
         Yapılacaklar Listesi
