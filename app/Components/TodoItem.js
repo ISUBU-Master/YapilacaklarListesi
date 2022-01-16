@@ -1,5 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
+import moment from 'moment';
+import 'moment/locale/tr';
 
 export default function TodoItem({id, data, deleteList}) {
   return (
@@ -26,7 +28,10 @@ export default function TodoItem({id, data, deleteList}) {
       </View>
       <View style={{flex: 1, marginLeft: 10, marginRight: 8}}>
         <Text style={{fontSize: 15, color: '#000', fontWeight: '600'}}>
-          {data}
+          {data.text}
+        </Text>
+        <Text style={{fontSize: 12, color: '#999'}}>
+          {moment(data.created_at).format('lll')}
         </Text>
       </View>
       <View style={{marginRight: 10}}>
