@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -11,6 +10,7 @@ import {
   TextInput,
 } from 'react-native';
 import Header from './Components/Header';
+import StatusBar from './Components/StatusBar';
 import TodoItem from './Components/TodoItem';
 import ControlButton from './Components/ControlButton';
 
@@ -36,6 +36,7 @@ export default function App() {
   return (
     <View style={{backgroundColor: '#161e69', flex: 1}}>
       <Header />
+      <StatusBar data={todoList} />
       <ScrollView style={{flex: 1}}>
         {todoList.map((item, index) => (
           <TodoItem

@@ -1,5 +1,6 @@
 import React from 'react';
-import {ScrollView, Text, View} from 'react-native';
+import {ScrollView, Text, TextInput, View, Alert} from 'react-native';
+import moment from 'moment';
 
 export default function Header() {
   return (
@@ -9,7 +10,6 @@ export default function Header() {
         marginLeft: 20,
         flexDirection: 'row',
         alignItems: 'flex-end',
-        marginBottom: 15,
       }}>
       <Text style={{flex: 1, color: '#fff', fontSize: 28, fontWeight: 'bold'}}>
         Yapılacaklar Listesi
@@ -22,7 +22,7 @@ export default function Header() {
           fontWeight: 'bold',
           marginBottom: 5,
         }}>
-        17.01.2022
+        {moment().format('LL')}
       </Text>
     </View>
   );
