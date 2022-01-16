@@ -6,14 +6,17 @@ import 'moment/locale/tr';
 export default function TodoItem({id, data, deleteList, doneToggle}) {
   return (
     <View
-      style={{
-        backgroundColor: '#fff',
-        margin: 10,
-        borderRadius: 15,
-        flexDirection: 'row',
-        minHeight: 65,
-        alignItems: 'center',
-      }}>
+      style={[
+        {
+          backgroundColor: '#fff',
+          margin: 10,
+          borderRadius: 15,
+          flexDirection: 'row',
+          minHeight: 65,
+          alignItems: 'center',
+        },
+        data.isDone ? {opacity: 0.7} : {},
+      ]}>
       <View style={{marginLeft: 10}}>
         <TouchableOpacity
           onPress={() => {
