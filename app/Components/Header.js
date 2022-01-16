@@ -17,7 +17,7 @@ export default function Header() {
       <Text
         style={{
           marginRight: 15,
-          color: '#fff',
+          color: '#ccc',
           fontSize: 14,
           fontWeight: 'bold',
           marginBottom: 5,
