@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, View, TextInput} from 'react-native';
+import {Text, TouchableOpacity, View, TextInput, Keyboard} from 'react-native';
 
 export default function ControlButton({addTodoList}) {
   const [value, setValue] = useState('');
@@ -34,6 +34,8 @@ export default function ControlButton({addTodoList}) {
       <TouchableOpacity
         onPress={() => {
           addTodoList(value);
+          setValue('');
+          Keyboard.dismiss();
         }}
         style={{
           width: 40,
