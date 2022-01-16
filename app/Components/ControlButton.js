@@ -33,7 +33,8 @@ export default function ControlButton({addTodoList}) {
       </View>
       <TouchableOpacity
         onPress={() => {
-          addTodoList(value);
+          // addTodoList(value);
+          addTodoList(Date.now().toString());
           setValue('');
           Keyboard.dismiss();
         }}
