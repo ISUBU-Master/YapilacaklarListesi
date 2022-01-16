@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 
-export default function TodoItem() {
+export default function TodoItem({data}) {
   return (
     <View
       style={{
@@ -9,7 +9,7 @@ export default function TodoItem() {
         margin: 10,
         borderRadius: 15,
         flexDirection: 'row',
-        minHeight: 90,
+        minHeight: 65,
         alignItems: 'center',
       }}>
       <View style={{marginLeft: 10}}>
@@ -26,8 +26,7 @@ export default function TodoItem() {
       </View>
       <View style={{flex: 1, marginLeft: 10, marginRight: 8}}>
         <Text style={{fontSize: 15, color: '#000', fontWeight: '600'}}>
-          Lorem ipsum dolar sit amet lorem ipsum dolar sit ametamet lorem ipsum
-          dolar sit amet
+          {data}
         </Text>
       </View>
       <View style={{marginRight: 10}}>

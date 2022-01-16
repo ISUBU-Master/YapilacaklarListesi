@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, TouchableOpacity, View, TextInput} from 'react-native';
 
-export default function ControlButton() {
+export default function ControlButton({addTodoList}) {
+  const [value, setValue] = useState('');
   return (
     <View
       style={{
@@ -18,6 +19,10 @@ export default function ControlButton() {
         }}>
         <TextInput
           multiline
+          onChangeText={text => {
+            setValue(text);
+          }}
+          value={value}
           placeholder="Yapılacak birşeyler yaz!"
           style={{
             marginHorizontal: 5,
@@ -27,6 +32,9 @@ export default function ControlButton() {
         />
       </View>
       <TouchableOpacity
+        onPress={() => {
+          addTodoList(value);
+        }}
         style={{
           width: 40,
           height: 40,
