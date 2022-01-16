@@ -21,6 +21,14 @@ export default function App() {
     setTodoList(todoList.filter((_, index) => index !== id));
   }
 
+  function doneToggle(id) {
+    setTodoList(
+      todoList.map((_, index) =>
+        index === id ? {..._, isDone: !_.isDone} : _,
+      ),
+    );
+  }
+
   return (
     <View style={{backgroundColor: '#161e69', flex: 1}}>
       <Header />
@@ -31,6 +39,7 @@ export default function App() {
             data={item}
             id={index}
             deleteList={deleteList}
+            doneToggle={doneToggle}
           />
         ))}
       </ScrollView>
