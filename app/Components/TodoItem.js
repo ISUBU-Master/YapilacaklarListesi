@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 
-export default function TodoItem({data}) {
+export default function TodoItem({id, data, deleteList}) {
   return (
     <View
       style={{
@@ -30,9 +30,12 @@ export default function TodoItem({data}) {
         </Text>
       </View>
       <View style={{marginRight: 10}}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            deleteList(id);
+          }}>
           <Text style={{fontSize: 13, fontWeight: 'bold', color: '#900'}}>
-            [Tamamla]
+            [Sil]
           </Text>
         </TouchableOpacity>
       </View>

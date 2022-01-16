@@ -17,12 +17,21 @@ import ControlButton from './Components/ControlButton';
 export default function App() {
   const [todoList, setTodoList] = useState([]);
 
+  function deleteList(id) {
+    setTodoList(todoList.filter((_, index) => index !== id));
+  }
+
   return (
     <View style={{backgroundColor: '#161e69', flex: 1}}>
       <Header />
       <ScrollView style={{flex: 1}}>
-        {todoList.map(item => (
-          <TodoItem data={item} />
+        {todoList.map((item, index) => (
+          <TodoItem
+            key={index}
+            data={item}
+            id={index}
+            deleteList={deleteList}
+          />
         ))}
       </ScrollView>
       <ControlButton
