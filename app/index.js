@@ -17,6 +17,10 @@ import ControlButton from './Components/ControlButton';
 export default function App() {
   const [todoList, setTodoList] = useState([]);
 
+  function addTodoList(data) {
+    setTodoList(d => [data, ...d]);
+  }
+
   function deleteList(id) {
     setTodoList(todoList.filter((_, index) => index !== id));
   }
@@ -43,11 +47,7 @@ export default function App() {
           />
         ))}
       </ScrollView>
-      <ControlButton
-        addTodoList={data => {
-          setTodoList(d => [...d, data]);
-        }}
-      />
+      <ControlButton addTodoList={addTodoList} />
     </View>
   );
 }
