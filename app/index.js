@@ -16,15 +16,16 @@ import ControlButton from './Components/ControlButton';
 
 export default function App() {
   return (
-    <ScrollView style={{backgroundColor: '#161e69'}}>
+    <View style={{backgroundColor: '#161e69', flex: 1}}>
       <Header />
-      {Array(10)
-        .fill(null)
-        .map(() => (
-          <TodoItem />
-        ))}
-
+      <ScrollView>
+        {Array(10)
+          .fill(null)
+          .map(() => (
+            <TodoItem />
+          ))}
+      </ScrollView>
       <ControlButton />
-    </ScrollView>
+    </View>
   );
 }
